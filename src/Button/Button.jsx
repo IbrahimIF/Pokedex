@@ -2,12 +2,18 @@
 
 
 
-function Button() {
 
+function Button({isMuted, onToggleMute}) {
 
   return (
     <>
-      <div className="flex flex-row h-full max-h-full w-full max-w-full ">
+    <button
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-50%"
+      onClick={onToggleMute}
+      >
+        {isMuted ? 'Unmute' : 'Mute'} Audio
+      </button>
+      <div className="flex bottom-0 right-0">
       <p>Button</p>
       <p>Button</p>
       <p>Button</p>
@@ -15,5 +21,6 @@ function Button() {
     </>
   )
 }
+
 
 export default Button
