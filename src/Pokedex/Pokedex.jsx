@@ -10,6 +10,7 @@ function Pokedex() {
     try {
       const data = await getPokemonData(pokemonName);
       setPokemonData(data);
+      
       setError('');
     } catch (err) {
       setError(err.message);
@@ -17,7 +18,10 @@ function Pokedex() {
     }
   };
 
-  const CapsPokemon = pokemonData.name[0].toUpperCase() + pokemonData.name.slice(1);
+
+
+   // Ensure pokemonData is not null before using it
+   const CapsPokemon = pokemonData ? pokemonData.name[0].toUpperCase() + pokemonData.name.slice(1) : '';
 
 
   return (
