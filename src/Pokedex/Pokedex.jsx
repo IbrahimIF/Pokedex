@@ -26,8 +26,8 @@ function Pokedex() {
 
   return (
     <>
-    <div className="flex justify-center w-full h-full">
-      <div className="flex relative justify-center flex-col overflow-hidden border-neutral-600 min-h-[40vh] w-[70vh] m-5 p-10 rounded-[15px] border-2 border-solid bg-slate-600">
+    <div className="flex justify-center w-full max-w-2xl">
+      <div className="flex flex-col justify-center relative  overflow-hidden border-neutral-600 min-h-[40vh] w-full p-10 m-5 rounded-[15px] border-2 border-solid bg-slate-600">
         <h1 className="text-white mb-5">Pokémon Information</h1>
         <input
           type="text"
