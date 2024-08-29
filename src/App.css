@@ -3,3 +3,53 @@
   width: 100%;
   margin: 0 auto;
 }
+
+
+
+.ball {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 30% 10%, #eafdff, #00aeff 80%, #0055ff 100%);
+  border-style: solid;
+  border-width: 4px;
+  border-color: azure;
+}
+
+.ball_r {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 30% 10%, #ffeaea, #ff0000 80%, #ff0000 100%);
+  shadow-color: #fff;
+  
+}
+
+
+
+
+.ball_y {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 30% 10%, #feffea, #fffb00 80%, #ddff00 100%);
+}
+
+.ball_g {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 30% 10%, #eaecff, #2bff00 80%, #00ff04 100%);
+}

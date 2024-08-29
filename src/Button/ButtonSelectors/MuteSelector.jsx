@@ -6,7 +6,7 @@ function MuteSelector({isMuted, onToggleMute}) {
     return (
       <>
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-3/4"
+        className="bg-white text-gray-800 font-semibold py-2 px-4 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300 w-full"
         onClick={onToggleMute}
         >
           {isMuted ? 'Unmute' : 'Mute'} Audio

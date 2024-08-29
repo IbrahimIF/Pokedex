@@ -5,7 +5,7 @@ function BackgroundSelector ({backgrounds, currentBackground, onBackgroundChange
     return(
       
             <select
-                className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-3/4"
+                className = "bg-white text-gray-800 font-semibold py-2 px-4 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300 w-full"
                 value  = {currentBackground}
                 onChange = {(e) => onBackgroundChange(Number(e.target.value))}
                 >
