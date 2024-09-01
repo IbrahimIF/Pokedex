@@ -15,16 +15,12 @@ export const getPokemonData = async (pokemonName) => {
   const data = await response.json();
 
 
-
-
-
   // Fetch Pokémon species data to get the description
   const speciesResponse = await fetch(data.species.url);
   if (!speciesResponse.ok) {
     throw new Error('Pokémon species data not found');
   }
   const speciesData = await speciesResponse.json();
-
 
 
   // Extracting the genus in English

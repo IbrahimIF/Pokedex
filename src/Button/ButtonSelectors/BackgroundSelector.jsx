@@ -14,7 +14,7 @@ function BackgroundSelector ({backgrounds, currentBackground, onBackgroundChange
                             {bg.name}
                         </option>
                     ))}
-                    </select>
+            </select>
         
     );
 }
