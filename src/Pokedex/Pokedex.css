@@ -49,11 +49,12 @@
 }
 
 .pokemon-info {
-    transform: translateX(10.75%) translateY(56%);
+    display: flex;
+    transform: translateX(25.5%) translateY(50%);
     color: white;
     background-color: rgba(0, 0, 0, 0);
-    height: 38%;
-    width: 75%;
+    height: 50%;
+    width: 60%;
 }
 
 .pokemon-name {
@@ -97,11 +98,11 @@
 }
 
 .pokemon-input {
-    position: fixed;
-    bottom: 11%;
-    margin-left: 90px;
-    height: 10%;
-    width: 12%;
+    position: relative;
+    bottom: 2px;
+    margin-left: 39px;
+    height: 93%;
+    width: 57%;
     color: black;
     background-color: rgba(0, 0, 0, 0);
     outline: none;
@@ -201,4 +202,14 @@
 .fairy {
     background-color: #f4a0e4;
     color: white;
+}
+
+.input-container{
+    position: relative;
+    display: flex;
+    width: 65%;
+    height: 18%;
+    justify-content: center;
+    align-items: center;
+
 }
