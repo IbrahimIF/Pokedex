@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 import BackgroundSelector from './ButtonSelectors/BackgroundSelector';
 import MuteSelector from './ButtonSelectors/MuteSelector';
 import GenSelector from './ButtonSelectors/GenSelector';
@@ -9,12 +10,11 @@ const generations = [
     { name: 'Generation 2', url: 'path/to/foreground2.png' },
 ];
 
-function Buttons({ backgrounds, currentBackground, onBackgroundChange }) {
-    const [currentGeneration, setCurrentGeneration] = useState(0);
+function Buttons({ backgrounds, currentBackground, onBackgroundChange, generations, currentGeneration, onGenerationChange }) {
     const [isMuted, setIsMuted] = useState(false);
 
     const changeGeneration = (index) => {
-        setCurrentGeneration(index);
+        onGenerationChange(index);
         playButtonSound();
     };
 
@@ -57,4 +57,26 @@ function Buttons({ backgrounds, currentBackground, onBackgroundChange }) {
     );
 }
 
+Buttons.propTypes = {
+    backgrounds: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    currentBackground: PropTypes.number.isRequired,
+    onBackgroundChange: PropTypes.func.isRequired,
+    // New propTypes for generations data and state management
+    generations: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            image: PropTypes.string.isRequired, // assuming 'image' is the prop
+        })
+    ).isRequired,
+    currentGeneration: PropTypes.number.isRequired,
+    onGenerationChange: PropTypes.func.isRequired,
+};
+
 export default Buttons;
+
+
