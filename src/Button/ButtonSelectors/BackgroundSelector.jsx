@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-/*import { useState } from 'react'*/
 
 function BackgroundSelector ({backgrounds, currentBackground, onBackgroundChange}){
     return(
@@ -21,5 +20,13 @@ function BackgroundSelector ({backgrounds, currentBackground, onBackgroundChange
 
 BackgroundSelector.propTypes = {
     onClick: PropTypes.func,
+    backgrounds: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    currentBackground: PropTypes.number.isRequired,
+    onBackgroundChange: PropTypes.func.isRequired,
   };
+
 export default BackgroundSelector;

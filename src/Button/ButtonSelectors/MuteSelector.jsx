@@ -1,6 +1,4 @@
-/*import { useState } from 'react'*/
-
-/* Font awseome Icon */
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
 import { faVolumeXmark } from '@fortawesome/free-solid-svg-icons';
@@ -22,6 +20,12 @@ function MuteSelector({isMuted, onToggleMute}) {
       </>
     )
   }
+
+  MuteSelector.propTypes = {
+    isMuted: PropTypes.bool.isRequired,
+    onToggleMute: PropTypes.func.isRequired,
+  };
+  
   
   
   export default MuteSelector

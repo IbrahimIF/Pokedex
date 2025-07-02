@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react'
 import { getPokemonData } from '../PokeAPI/pokeapi';
 import './Pokedex.css';
 import { playButtonSound } from '/public/Sounds/sound';
 import Voice from '../Voice/Voice';
-import dex_one from '/public/Textures/dex1.png';
 
-function Pokedex() {
+function Pokedex({ currentGeneration, generationsData }) {
     const [pokemonName, setPokemonName] = useState('');
     const [pokemonData, setPokemonData] = useState(null);
     const [error, setError] = useState('');
@@ -48,7 +48,7 @@ const descriptionText = pokemonData
             <div className="pokedex-container">
                 <div className="pokedex-inner">
                     <Voice descriptionText={descriptionText} />
-                    <img src={dex_one} alt="pokedex texture"></img>
+                    <img src={generationsData[currentGeneration]?.image} alt="pokedex texture"></img>
                     <div className="pokedex-screen-container">
                         <div id="pokemonInfo" className="pokemon-info">
                             {error && <p>{error}</p>}
@@ -97,4 +97,18 @@ const descriptionText = pokemonData
     )
 }
 
+
+
+Pokedex.propTypes = {
+    currentGeneration: PropTypes.number.isRequired,
+    generationsData: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            image: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
+
 export default Pokedex
+
+

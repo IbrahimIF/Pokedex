@@ -3,11 +3,10 @@ import './Loading.css'
 
 function Loading() {
 
-
   return (
     <>
-      <div className="flex w-full h-full">
-
+      <div className="containers">
+        <div className="pokemons"></div>
       </div>
     </>
   )

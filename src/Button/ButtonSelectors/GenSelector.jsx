@@ -1,5 +1,5 @@
 /*import { useState } from 'react'*/
-
+import PropTypes from 'prop-types';
 
 function GenSelector({ generations, currentGeneration, onGenerationChange }) {
   return (
@@ -16,5 +16,17 @@ function GenSelector({ generations, currentGeneration, onGenerationChange }) {
     </select>
   );
 }
+
+
+GenSelector.propTypes = {
+  generations: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  currentGeneration: PropTypes.number.isRequired,
+  onGenerationChange: PropTypes.func.isRequired,
+};
+
 
 export default GenSelector;
