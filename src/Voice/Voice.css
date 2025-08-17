@@ -14,8 +14,8 @@ z-index: 500;
 .button {
     background-color: #b11b1b;
     position: relative;
-    width: 55px;
-    height: 50px;
+    width: 59px;
+    height: 55px;
     -webkit-transition: top 0.3s ease;
     transition: all 0.3s ease;
     border-radius: 50%;
@@ -47,8 +47,8 @@ z-index: 500;
     content: "";
     display: block;
     position: relative;
-    width: 55px;
-    height: 50px;
+    width: 60px;
+    height: 55px;
     background: rgb(85, 85, 85);
     background: linear-gradient(
       to right,
@@ -64,10 +64,10 @@ z-index: 500;
     border-radius: 50%;
     border: none;
     left: calc(
-      35% - 50px
+      32% - 50px
     );
     top: calc(
-      59% - 172px
+      59% - 182px
     );
     transition: all 0.3s ease;
     box-shadow: 1px 4px 10px rgb(81, 81, 81);

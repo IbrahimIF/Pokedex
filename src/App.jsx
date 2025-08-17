@@ -23,8 +23,8 @@ const backgrounds = [
 ];
 
 const generationsData = [
-  { name: 'Generation 1', image: '/public/Textures/dex1.png' }, 
-  { name: 'Generation 2', image: '/public/Textures/dex1.png' }, //Dex 2 has been added but its a stand in.
+  { name: 'Generation 1', image: '/Textures/dex1.png' }, 
+  { name: 'Generation 2', image: '/Textures/dex1.png' }, //Dex 2 has been added but its a stand in.
 ];
 
 function App() {

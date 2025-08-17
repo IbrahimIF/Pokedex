@@ -99,10 +99,8 @@
 
 .pokemon-input {
     position: relative;
-    bottom: 2px;
-    margin-left: 39px;
-    height: 93%;
-    width: 57%;
+    height: 88%;
+    width: 90%;
     color: black;
     background-color: rgba(0, 0, 0, 0);
     outline: none;
@@ -111,6 +109,18 @@
 
 .pokemon-input::placeholder {
     color: black;
+}
+
+
+.input-container{
+    position: relative;
+    display: flex;
+    width: 41%;
+    height: 19%;
+    justify-content: center;
+    align-items: center;
+    bottom: 7px;
+    left: 83px
 }
 
 /* types */
@@ -204,12 +214,3 @@
     color: white;
 }
 
-.input-container{
-    position: relative;
-    display: flex;
-    width: 65%;
-    height: 18%;
-    justify-content: center;
-    align-items: center;
-
-}
