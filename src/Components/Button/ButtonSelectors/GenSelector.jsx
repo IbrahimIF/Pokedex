@@ -1,5 +1,9 @@
-/*import { useState } from 'react'*/
 import PropTypes from 'prop-types';
+
+export const generationsData = [
+  { name: 'Generation 1', image: '/Textures/dex1.png' }, 
+  { name: 'Generation 2', image: '/Textures/dex1.png' },
+];
 
 function GenSelector({ generations, currentGeneration, onGenerationChange }) {
   return (
@@ -22,6 +26,7 @@ GenSelector.propTypes = {
   generations: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
     })
   ).isRequired,
   currentGeneration: PropTypes.number.isRequired,

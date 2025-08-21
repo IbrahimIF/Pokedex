@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react'
-import { getPokemonData } from '../PokeAPI/pokeapi';
+import { getPokemonData } from '../../api/pokeapi';
 import './Pokedex.css';
 import { playButtonSound } from '/public/Sounds/sound';
 import Voice from '../Voice/Voice';
