@@ -5,11 +5,6 @@ import MuteSelector from './ButtonSelectors/MuteSelector';
 import GenSelector from './ButtonSelectors/GenSelector';
 import { playButtonSound, setMuteState } from '/public/Sounds/sound';
 
-const generations = [
-    { name: 'Generation 1', url: 'path/to/foreground1.png' },
-    { name: 'Generation 2', url: 'path/to/foreground2.png' },
-];
-
 function Buttons({ backgrounds, currentBackground, onBackgroundChange, generations, currentGeneration, onGenerationChange }) {
     const [isMuted, setIsMuted] = useState(false);
 
@@ -66,11 +61,10 @@ Buttons.propTypes = {
     ).isRequired,
     currentBackground: PropTypes.number.isRequired,
     onBackgroundChange: PropTypes.func.isRequired,
-    // New propTypes for generations data and state management
     generations: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired, // assuming 'image' is the prop
+            image: PropTypes.string.isRequired,
         })
     ).isRequired,
     currentGeneration: PropTypes.number.isRequired,
