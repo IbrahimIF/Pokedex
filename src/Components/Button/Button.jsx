@@ -35,7 +35,7 @@ function Buttons({ backgrounds, currentBackground, onBackgroundChange, generatio
 
     return (
         <>
-            <div className="flex flex-col justify-start items-start space-y-2 w-1/4 max-w-xs ml-5">
+            <div id="Buttons" className="flex flex-col justify-start items-start space-y-2 w-1/4 max-w-xs ml-5">
                 <BackgroundSelector
                     backgrounds={backgrounds}
                     currentBackground={currentBackground}
