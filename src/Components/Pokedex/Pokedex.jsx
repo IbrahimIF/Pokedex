@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import { useState } from 'react'
 import { getPokemonData } from '../../api/pokeapi';
 import './Pokedex.css';
-import { playButtonSound } from '/public/Sounds/sound';
+import './Type.css'
 import Voice from '../Voice/Voice';
 
-function Pokedex({ currentGeneration, generationsData }) {
+function Pokedex({ currentGeneration, generationsData, playButtonSound }) {
     const [pokemonName, setPokemonName] = useState('');
     const [pokemonData, setPokemonData] = useState(null);
     const [error, setError] = useState('');
@@ -32,8 +32,8 @@ function Pokedex({ currentGeneration, generationsData }) {
     const CapsPokemon = pokemonData ? pokemonData.name[0].toUpperCase() + pokemonData.name.slice(1) : '';
     const types = pokemonData ? pokemonData.types.map((typeInfo) => typeInfo.type.name) : '';
 
-    const type1 = types[0] || '';  // First type
-    const type2 = types[1] || '';  // Second type, or empty string if it doesn't exist
+    const type1 = types[0] || '';
+    const type2 = types[1] || '';
 
     const cleanedDescription = pokemonData
   ? pokemonData.description.replace(/\u000c/g, ' ').toLowerCase()
@@ -46,15 +46,12 @@ const descriptionText = pokemonData
     return (
         <>
             <div className="pokedex-container">
-                <div className="pokedex-inner">
                     <Voice descriptionText={descriptionText} />
                     <img src={generationsData[currentGeneration]?.image} alt="pokedex texture"></img>
                     <div className="pokedex-screen-container">
-                        <div id="pokemonInfo" className="pokemon-info">
                             {error && <p>{error}</p>}
                             {pokemonData && (
-                                <div>
-                                    <h2 className="pokemon-name">{CapsPokemon} // {pokemonData.genus}</h2>
+                                <div className="pokemon-info">
                                     <img
                                         src={pokemonData.sprites.front_default}
                                         alt={pokemonData.name}
@@ -74,11 +71,6 @@ const descriptionText = pokemonData
                                     <p className="pokemon-description">{descriptionText}</p>
                                 </div>
                             )}
-                        </div>
-                        
-                        <button onClick={handleGetPokemon} className="pokemon-button">
-                        </button>
-                        
                     </div>
                     <div className="input-container">
                             <input
@@ -91,7 +83,6 @@ const descriptionText = pokemonData
                                 className="pokemon-input"
                             />
                         </div>
-                </div>
             </div>
         </>
     )
@@ -107,6 +98,7 @@ Pokedex.propTypes = {
             image: PropTypes.string.isRequired,
         })
     ).isRequired,
+    playButtonSound: PropTypes.func.isRequired,
 };
 
 export default Pokedex
