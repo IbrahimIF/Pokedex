@@ -6,12 +6,22 @@ import Buttons from './Components/Button/Button';
 import Loading from './Components/Loading/Loading';
 import { backgrounds } from './Components/Button/ButtonSelectors/BackgroundSelector';
 import { generationsData } from './Components/Button/ButtonSelectors/GenSelector';
+import { useAudio } from './hooks/useAudio';
 
 function App() {
-  const [currentBackground, setCurrentBackground] = useState(0);
-  const [currentGeneration, setCurrentGeneration] = useState(0);
+  const [currentBackground, setCurrentBackground] = useState(() => {
+    const savedBackground = localStorage.getItem('currentBackground');
+    const parsedBackground = savedBackground !== null ? Number(savedBackground) : 0;
+    return parsedBackground < backgrounds.length ? parsedBackground : 0;
+  });
+  const [currentGeneration, setCurrentGeneration] = useState(() => {
+    const savedGeneration = localStorage.getItem('currentGeneration');
+    const parsedGeneration = savedGeneration !== null ? Number(savedGeneration) : 0;
+    return parsedGeneration < generationsData.length ? parsedGeneration : 0;
+  });
   const [isLoading, setIsLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
+  const { playButtonSound } = useAudio();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,6 +31,14 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('currentBackground', currentBackground);
+  }, [currentBackground]);
+  
+  useEffect(() => {
+    localStorage.setItem('currentGeneration', currentGeneration);
+  }, [currentGeneration]);
 
   return (
     <>
@@ -34,6 +52,7 @@ function App() {
               <Pokedex
                 currentGeneration={currentGeneration}
                 generationsData={generationsData}
+                playButtonSound={playButtonSound}
               />
               <Buttons
                 backgrounds={backgrounds}

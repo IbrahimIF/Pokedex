@@ -3,10 +3,9 @@ import { useState } from 'react'
 import { getPokemonData } from '../../api/pokeapi';
 import './Pokedex.css';
 import './Type.css'
-import { playButtonSound } from '/public/Sounds/sound';
 import Voice from '../Voice/Voice';
 
-function Pokedex({ currentGeneration, generationsData }) {
+function Pokedex({ currentGeneration, generationsData, playButtonSound }) {
     const [pokemonName, setPokemonName] = useState('');
     const [pokemonData, setPokemonData] = useState(null);
     const [error, setError] = useState('');
@@ -99,6 +98,7 @@ Pokedex.propTypes = {
             image: PropTypes.string.isRequired,
         })
     ).isRequired,
+    playButtonSound: PropTypes.func.isRequired,
 };
 
 export default Pokedex

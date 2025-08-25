@@ -1,22 +1,13 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
 import BackgroundSelector from './ButtonSelectors/BackgroundSelector';
 import MuteSelector from './ButtonSelectors/MuteSelector';
 import GenSelector from './ButtonSelectors/GenSelector';
-import { playButtonSound, setMuteState } from '/public/Sounds/sound';
+import { useAudio } from '../../hooks/useAudio';
 
 function Buttons({ backgrounds, currentBackground, onBackgroundChange, generations, currentGeneration, onGenerationChange }) {
-    const [isMuted, setIsMuted] = useState(false);
-
+    const { isMuted, playButtonSound, toggleMute } = useAudio();
     const changeGeneration = (index) => {
         onGenerationChange(index);
-        playButtonSound();
-    };
-
-    const toggleMute = () => {
-        const newMutedState = !isMuted;
-        setIsMuted(newMutedState);
-        setMuteState(newMutedState);
         playButtonSound();
     };
 
@@ -24,14 +15,6 @@ function Buttons({ backgrounds, currentBackground, onBackgroundChange, generatio
         onBackgroundChange(index);
         playButtonSound();
     };
-
-    useEffect(() => {
-        const audioElements = document.getElementsByTagName('audio');
-        for (let audio of audioElements) {
-            audio.muted = isMuted;
-        }
-        setMuteState(isMuted);
-    }, [isMuted]);
 
     return (
         <>

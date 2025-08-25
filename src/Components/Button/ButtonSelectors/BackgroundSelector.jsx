@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 export const backgrounds = [
     { name: 'Realistic', url: 'url(/Backgrounds/box_realistic.png)' },
     { name: 'City', url: 'url(/Backgrounds/box_city.png)' },
-    { name: 'Nostalgic', url: 'url(/Backgrounds/Box_Nostalgic_BDSP.png)' },
-    { name: 'Desert', url: 'url(/Backgrounds/Box_Desert_BDSP.png)' },
-    { name: 'Distortion', url: 'url(/Backgrounds/Box_Distortion_Platinum_BDSP.png)' },
-    { name: 'Team Galactic', url: 'url(/Backgrounds/Box_Team_Galactic_Platinum_BDSP.png)' },
+    { name: 'Nostalgic', url: 'url(/Backgrounds/Box_Nostalgic.png)' },
+    { name: 'Desert', url: 'url(/Backgrounds/Box_Desert.png)' },
+    { name: 'Distortion', url: 'url(/Backgrounds/Box_Distortion.png)' },
     { name: 'PokeCenter', url: 'url(/Backgrounds/pokemon_center.png)' },
     { name: 'Forest', url: 'url(/Backgrounds/box_forest.png)' },
     { name: 'Volcano', url: 'url(/Backgrounds/box_volcano.png)' },

@@ -13,7 +13,7 @@ function MuteSelector({isMuted, onToggleMute}) {
         onClick={onToggleMute}
 
         >
-          {isMuted ? <FontAwesomeIcon icon={faVolumeHigh} />  : <FontAwesomeIcon icon={faVolumeXmark} /> } 
+          {isMuted ? <FontAwesomeIcon icon={faVolumeXmark} />  : <FontAwesomeIcon icon={faVolumeHigh} /> } 
         </button>
         <div className="flex bottom-0 right-0">
         </div>
