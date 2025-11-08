@@ -40,6 +40,7 @@
     flex-direction: row;
     justify-content: center;
     gap: 10px;
+    padding: 10px;
 }
 
 .stats-container {
@@ -49,16 +50,17 @@
     width: 100%;
     gap: 1rem;
     color: black;
+    font-size: 9px;
 }
 
 .pokemon-description {
-    padding: 0.2rem 1.25rem;
+    padding: 0.9rem 1.25rem;
+    align-items: center;
     text-align: center;
-    font-size: 14px;
+    font-size: 9px;
     color: black;
 }
 
-/* This style is for the background image of the Pokedex */
 .pokedex-container > img {
     position: absolute;
     top: 0;
@@ -68,9 +70,7 @@
     z-index: 0;
 }
 
-
-  
-  .pokemon-input {
+.pokemon-input {
     position: relative;
     height: 88%;
     width: 90%;
@@ -78,13 +78,14 @@
     background-color: rgba(0, 0, 0, 0);
     outline: none;
     text-align: center;
-  }
-  
-  .pokemon-input::placeholder {
+    font-size: 9px;
+}
+
+.pokemon-input::placeholder {
     color: black;
-  }
-  
-  .input-container {
+}
+
+.input-container {
     position: relative;
     display: flex;
     width: 41%;
@@ -92,4 +93,4 @@
     justify-content: center;
     align-items: center;
     left: -74px;
-  }
+}

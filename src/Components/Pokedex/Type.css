@@ -2,10 +2,13 @@
   .type-pill {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     border: 1px solid white;
     border-radius: 8px;
-    min-width: 80px;
+    min-width: 90px;
+    min-height: 25px;
+    font-size: 10px;
   }
 
 .fire { background-color: #fb6344; color: white; }

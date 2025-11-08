@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../Button.css';
 
 export const generationsData = [
   { name: 'Generation 1', image: '/Textures/dex1.png' }, 
@@ -8,7 +9,7 @@ export const generationsData = [
 function GenSelector({ generations, currentGeneration, onGenerationChange }) {
   return (
     <select 
-      className="bg-white text-gray-800 font-semibold py-2 px-4 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300 w-full"
+      className="pixel-btn"
       value={currentGeneration}
       onChange={(e) => onGenerationChange(Number(e.target.value))}
     >
@@ -32,6 +33,4 @@ GenSelector.propTypes = {
   currentGeneration: PropTypes.number.isRequired,
   onGenerationChange: PropTypes.func.isRequired,
 };
-
-
 export default GenSelector;
