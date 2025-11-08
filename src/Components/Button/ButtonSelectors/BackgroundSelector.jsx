@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../Button.css';
 
 export const backgrounds = [
     { name: 'Realistic', url: 'url(/Backgrounds/box_realistic.png)' },
@@ -17,7 +18,7 @@ export const backgrounds = [
 function BackgroundSelector ({backgrounds, currentBackground, onBackgroundChange}){
     return(
         <select
-            className="bg-white text-gray-800 font-semibold py-2 px-4 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300 w-full"
+            className="pixel-btn"
             value ={currentBackground}
             onChange={(e) => onBackgroundChange(Number(e.target.value))}
         >
@@ -40,5 +41,4 @@ BackgroundSelector.propTypes = {
     currentBackground: PropTypes.number.isRequired,
     onBackgroundChange: PropTypes.func.isRequired,
   };
-
 export default BackgroundSelector;

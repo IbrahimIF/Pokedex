@@ -47,8 +47,8 @@ function App() {
           <Loading/>
         </div>
       ) : (
-          <div id="Background" className="content fade-in bg-cover bg-center h-screen" style={{ backgroundImage: backgrounds[currentBackground].url }}>
-            <div id="Container" className="flex w-full h-full p-10 justify-center  ">
+          <div id="Background" className="content fade-in bg-cover bg-center h-screen flex justify-center items-center" style={{ backgroundImage: backgrounds[currentBackground].url }}>
+            <div className="container">
               <Pokedex
                 currentGeneration={currentGeneration}
                 generationsData={generationsData}
